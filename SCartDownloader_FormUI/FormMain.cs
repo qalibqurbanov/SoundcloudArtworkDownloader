@@ -40,26 +40,16 @@ namespace SCartDownloader_FormUI
             cbLastFolder.TabIndex = 5;
         }
 
-        // **************************************************************************
+        // ***************************************************************************************************************** \\
         private readonly Regex regex = new Regex(@"^(?<track>https:\/\/soundcloud.com\/(?:(?!sets|stats|groups|upload|you|mobile|stream|messages|discover|notifications|terms-of-use|people|pages|jobs|settings|logout|charts|imprint|popular)(?:[a-z0-9\-_]{1,25}))\/(?:(?:(?!sets|playlist|stats|settings|logout|notifications|you|messages)(?:[a-z0-9\-_]{1,100}))(?:\/s\-[a-zA-Z0-9\-_]{1,10})?))(?:[a-z0-9\-\?=\/]*)$");
 
-        //private static ConfigurationFileMap fileMap = new ConfigurationFileMap($"{Application.ExecutablePath.Substring(0, Application.ExecutablePath.LastIndexOf(@"\"))}\\Settings.config"); //Path to your config file
-        //private static Configuration configuration { get; set; } = ConfigurationManager.OpenMappedMachineConfiguration(fileMap);
-
-
         /* Elave etdiyim config fayl default adda(App.Config) olmayanda hec cure qebul eletdire bilmedim proqrama. */
-        // Get the application configuration file.
+        // Application-in konfiqurasiya faylini elde edirik:
        private static Configuration config =   ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
 
-        // Get the conectionStrings section.
+        // AppSettings section-ni elde edirik:
         private static AppSettingsSection appSettings = config.AppSettings;
-
-      //Save the configuration
-      //config.Save(ConfigurationSaveMode.Modified);
-
-      //Refresh the Section
-        // ConfigurationManager.RefreshSection("connectionStrings");
-        // **************************************************************************
+        // ***************************************************************************************************************** \\
 
         private async void btnFind_Click(object sender, EventArgs e)
         {

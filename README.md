@@ -1,6 +1,10 @@
 # SoundCloudArtworkDownloader
 A tool to download music artwork from Soundcloud.\
-<br/> <img alt="AppScreenshot" src="https://i.ibb.co/N1fMK7v/123.png" width="100%"/>
+<br/> <img alt="AppScreenshot" src="https://i.ibb.co/N1fMK7v/123.png" width="100%"/> 
+
+
+# Project requirements:
+- [Net Framework v4.5.2](https://dotnet.microsoft.com/en-us/download/dotnet-framework/net452)
 
 
 # Used libraries:

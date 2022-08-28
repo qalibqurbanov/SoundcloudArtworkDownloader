@@ -1,0 +1,17 @@
+C:\Users\antik\source\repos\SoundCloudArtworkDownloader\SCartDownloader_FormUI\bin\Release\SoundCloud Artwork Downloader.exe
+C:\Users\antik\source\repos\SoundCloudArtworkDownloader\SCartDownloader_FormUI\bin\Release\SoundCloud Artwork Downloader.pdb
+C:\Users\antik\source\repos\SoundCloudArtworkDownloader\SCartDownloader_FormUI\bin\Release\HtmlAgilityPack.dll
+C:\Users\antik\source\repos\SoundCloudArtworkDownloader\SCartDownloader_FormUI\bin\Release\MetroFramework.Design.dll
+C:\Users\antik\source\repos\SoundCloudArtworkDownloader\SCartDownloader_FormUI\bin\Release\MetroFramework.dll
+C:\Users\antik\source\repos\SoundCloudArtworkDownloader\SCartDownloader_FormUI\bin\Release\MetroFramework.Fonts.dll
+C:\Users\antik\source\repos\SoundCloudArtworkDownloader\SCartDownloader_FormUI\bin\Release\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Users\antik\source\repos\SoundCloudArtworkDownloader\SCartDownloader_FormUI\bin\Release\HtmlAgilityPack.pdb
+C:\Users\antik\source\repos\SoundCloudArtworkDownloader\SCartDownloader_FormUI\bin\Release\HtmlAgilityPack.xml
+C:\Users\antik\source\repos\SoundCloudArtworkDownloader\SCartDownloader_FormUI\obj\Release\SCartDownloader_FormUI.csproj.AssemblyReference.cache
+C:\Users\antik\source\repos\SoundCloudArtworkDownloader\SCartDownloader_FormUI\obj\Release\SCartDownloader_FormUI.FormMain.resources
+C:\Users\antik\source\repos\SoundCloudArtworkDownloader\SCartDownloader_FormUI\obj\Release\SCartDownloader_FormUI.Properties.Resources.resources
+C:\Users\antik\source\repos\SoundCloudArtworkDownloader\SCartDownloader_FormUI\obj\Release\SCartDownloader_FormUI.csproj.GenerateResource.cache
+C:\Users\antik\source\repos\SoundCloudArtworkDownloader\SCartDownloader_FormUI\obj\Release\SCartDownloader_FormUI.csproj.CoreCompileInputs.cache
+C:\Users\antik\source\repos\SoundCloudArtworkDownloader\SCartDownloader_FormUI\obj\Release\SCartDownloader_FormUI.csproj.CopyComplete
+C:\Users\antik\source\repos\SoundCloudArtworkDownloader\SCartDownloader_FormUI\obj\Release\SoundCloud Artwork Downloader.exe
+C:\Users\antik\source\repos\SoundCloudArtworkDownloader\SCartDownloader_FormUI\obj\Release\SoundCloud Artwork Downloader.pdb

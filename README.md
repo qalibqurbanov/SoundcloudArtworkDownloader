@@ -7,8 +7,14 @@ A tool to download music artwork from Soundcloud.\
 - [Net Framework v4.5.2](https://dotnet.microsoft.com/en-us/download/dotnet-framework/net452)
 
 
-# Used libraries:
+# Used libraries, icons:
+**Libraries:**
 | Name | URL     |
 | :-------- | :------- |
-| `HtmlAgilityPack` | [https://www.nuget.org/packages/htmlagilitypack/](https://www.nuget.org/packages/htmlagilitypack/)
-| `MetroModernUI` | [https://www.nuget.org/packages/MetroModernUI](https://www.nuget.org/packages/MetroModernUI)
+| `HtmlAgilityPack` | [https://www.nuget.org/packages/htmlagilitypack/](https://www.nuget.org/packages/htmlagilitypack/) |
+| `MetroModernUI` | [https://www.nuget.org/packages/MetroModernUI](https://www.nuget.org/packages/MetroModernUI)|
+
+**Icons:**
+| Name | URL     |
+| :-------- | :------- |
+| `Icons` | [Icons8](https://icons8.com/) |

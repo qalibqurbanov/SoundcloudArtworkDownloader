@@ -12,9 +12,9 @@ A tool to download music artwork from Soundcloud.\
 | Name | URL     |
 | :-------- | :------- |
 | `HtmlAgilityPack` | [https://www.nuget.org/packages/htmlagilitypack/](https://www.nuget.org/packages/htmlagilitypack/) |
-| `MetroModernUI` | [https://www.nuget.org/packages/MetroModernUI](https://www.nuget.org/packages/MetroModernUI)|
+| `MetroModernUI` | [https://www.nuget.org/packages/MetroModernUI](https://www.nuget.org/packages/MetroModernUI/)|
 
 **Icons:**
 | Name | URL     |
 | :-------- | :------- |
-| `Icons` | [Icons8](https://icons8.com/) |
+| `Icons` | [https://icons8.com/](https://icons8.com/) |

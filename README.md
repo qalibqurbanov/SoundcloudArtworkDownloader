@@ -11,11 +11,11 @@ A tool to download music artwork from Soundcloud.\
 **Libraries:**
 | Name | URL     |
 | :-------- | :------- |
-| `HtmlAgilityPack` | [https://www.nuget.org/packages/htmlagilitypack/](https://www.nuget.org/packages/htmlagilitypack/) |
-| `MetroModernUI` | [https://www.nuget.org/packages/MetroModernUI/](https://www.nuget.org/packages/MetroModernUI/) |
+| `HtmlAgilityPack` | [https://www.nuget.org/packages/htmlagilitypack/](https://www.nuget.org/packages/HtmlAgilityPack) |
+| `MetroModernUI` | [https://www.nuget.org/packages/MetroModernUI/](https://www.nuget.org/packages/MetroModernUI) |
 
 
 **Icons:**
 | Name | URL     |
 | :-------- | :------- |
-| `Icons` | [https://icons8.com/](https://icons8.com/) |
+| `Icons` | [https://icons8.com/](https://icons8.com) |

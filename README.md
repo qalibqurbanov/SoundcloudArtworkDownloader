@@ -1,5 +1,5 @@
-# SoundCloudArtworkDownloader
-A tool to download music artwork from Soundcloud.\
+# <p align="center">SoundCloudArtworkDownloader</p>
+<p align="center">A tool to download music artwork from Soundcloud.</p>
 <br/> <img alt="AppScreenshot" src="https://i.ibb.co/N1fMK7v/123.png" width="100%"/> 
 
 

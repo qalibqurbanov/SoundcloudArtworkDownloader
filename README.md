@@ -1,6 +1,8 @@
 # <p align="center">SoundCloudArtworkDownloader</p>
-<p align="center">A tool to download music artwork from Soundcloud.</p>
-<br/> <img alt="AppScreenshot" src="https://i.ibb.co/N1fMK7v/123.png" width="100%"/> 
+
+
+<p align="center">Download music artwork from Soundcloud.</p>
+<br/> <img alt="AppScreenshot" src="https://i.ibb.co/ZNS76pp/Sound-Cloud-Artwork-Downloader.png" width="100%"/> 
 
 
 # Project requirements:
@@ -11,8 +13,8 @@
 **Libraries:**
 | Name | URL     |
 | :-------- | :------- |
-| `HtmlAgilityPack` | [https://www.nuget.org/packages/HtmlAgilityPack](https://www.nuget.org/packages/HtmlAgilityPack) |
 | `MetroModernUI` | [https://www.nuget.org/packages/MetroModernUI](https://www.nuget.org/packages/MetroModernUI) |
+| `HtmlAgilityPack` | [https://www.nuget.org/packages/HtmlAgilityPack](https://www.nuget.org/packages/HtmlAgilityPack) |
 
 
 **Icons:**

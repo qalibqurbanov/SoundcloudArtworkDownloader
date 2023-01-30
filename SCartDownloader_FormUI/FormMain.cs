@@ -20,13 +20,13 @@ namespace SCartDownloader_FormUI
         private static readonly string ApplicationPath = Assembly.GetExecutingAssembly().Location.Substring(0, Assembly.GetExecutingAssembly().Location.LastIndexOf("\\")) + "\\";
 
         // 'ini' fayla yazma/oxuma emeliyyatlarini tetbiq edir:
-        private static FileIniDataParser ConfigurationManager { get; set; } = new FileIniDataParser();
+        private static readonly FileIniDataParser ConfigurationManager = new FileIniDataParser();
 
         // Konfiqurasiya faylindan oxudugumuz datalari saxlayir:
-        private static IniData ConfigurationFileContent { get; set; }
+        private static IniData ConfigurationFileContent { get; set; } = new IniData();
 
         // Konfiqurasiyanin hara yerlewdiyini saxlayir:
-        private static string ConfigurationFilePath { get; } = ApplicationPath + "SoundcloudArtworkDownloader.ini";
+        private static readonly string ConfigurationFilePath = ApplicationPath + "SoundcloudArtworkDownloader.ini";
         #endregion Vars
 
         public FormMain()
@@ -103,11 +103,12 @@ namespace SCartDownloader_FormUI
             }
         }
 
-        private void FormMain_FormClosed(object sender, FormClosedEventArgs e)
+        private void FormMain_FormClosing(object sender, FormClosingEventArgs e)
         {
             ConfigurationFileContent["Settings"]["GenerateRandomFileName"] = cbRandomName.Checked.ToString();
             ConfigurationFileContent["Settings"]["SaveToLastSelectedFolder"] = cbLastFolder.Checked.ToString();
-            ConfigurationManager.WriteFile(ConfigurationFilePath, ConfigurationFileContent);
+            try { ConfigurationManager.WriteFile(ConfigurationFilePath, ConfigurationFileContent); }
+            catch { }
         }
     }
 }

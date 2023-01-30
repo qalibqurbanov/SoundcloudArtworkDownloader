@@ -90,7 +90,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="Settings.cs" />
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
     </EmbeddedResource>
@@ -99,17 +98,10 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="bin\Debug\resources\2.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="bin\Debug\resources\1.ico" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\_2.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Resources\_1.ico" />
     <Content Include="_1.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

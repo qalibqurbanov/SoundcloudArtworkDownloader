@@ -1,19 +1,45 @@
 ﻿using System;
-using System.Collections.Specialized;
-using System.Configuration;
-using System.Text.RegularExpressions;
+using IniParser;
+using System.IO;
+using IniParser.Model;
+using System.Reflection;
 using System.Windows.Forms;
+using MetroFramework.Forms;
+using System.Text.RegularExpressions;
 using SCartDownloader_FormUI.Helpers;
 
 namespace SCartDownloader_FormUI
 {
-    public partial class FormMain : MetroFramework.Forms.MetroForm
+    public partial class FormMain : MetroForm
     {
+        #region Vars
+        // Verilen soundcloud musiqi linkinin dogrulugunu yoxlayir:
+        private readonly Regex regex = new Regex(@"^(?<track>https:\/\/soundcloud.com\/(?:(?!sets|stats|groups|upload|you|mobile|stream|messages|discover|notifications|terms-of-use|people|pages|jobs|settings|logout|charts|imprint|popular)(?:[a-z0-9\-_]{1,25}))\/(?:(?:(?!sets|playlist|stats|settings|logout|notifications|you|messages)(?:[a-z0-9\-_]{1,100}))(?:\/s\-[a-zA-Z0-9\-_]{1,10})?))(?:[a-z0-9\-\?=\/]*)$");
+
+        // Hazirki assembly-nin pathini saxlayir:
+        private static readonly string ApplicationPath = Assembly.GetExecutingAssembly().Location.Substring(0, Assembly.GetExecutingAssembly().Location.LastIndexOf("\\")) + "\\";
+
+        // 'ini' fayla yazma/oxuma emeliyyatlarini tetbiq edir:
+        private static FileIniDataParser ConfigurationManager { get; set; } = new FileIniDataParser();
+
+        // Konfiqurasiya faylindan oxudugumuz datalari saxlayir:
+        private static IniData ConfigurationFileContent { get; set; }
+
+        // Konfiqurasiyanin hara yerlewdiyini saxlayir:
+        private static string ConfigurationFilePath { get; } = ApplicationPath + "SoundcloudArtworkDownloader.ini";
+        #endregion Vars
+
         public FormMain()
         {
             InitializeComponent();
 
-            this.Icon = Properties.Resources._1;
+            #region Create configuration file if not exists
+            if (!File.Exists(ConfigurationFilePath)) { File.Create(ConfigurationFilePath); }
+            else { ConfigurationFileContent = ConfigurationManager.ReadFile(ConfigurationFilePath); }
+            #endregion Create configuration file if not exists
+
+            #region Settings of Form Controls
+            lblVersion.Text = $"v{Application.ProductVersion}";
 
             pbArtwork.SizeMode = PictureBoxSizeMode.StretchImage;
             pbArtwork.Image = Properties.Resources._2;
@@ -38,24 +64,14 @@ namespace SCartDownloader_FormUI
             btnSave.TabIndex = 3;
             cbRandomName.TabIndex = 4;
             cbLastFolder.TabIndex = 5;
+            #endregion Settings of Form Controls
         }
-
-        // ***************************************************************************************************************** \\
-        private readonly Regex regex = new Regex(@"^(?<track>https:\/\/soundcloud.com\/(?:(?!sets|stats|groups|upload|you|mobile|stream|messages|discover|notifications|terms-of-use|people|pages|jobs|settings|logout|charts|imprint|popular)(?:[a-z0-9\-_]{1,25}))\/(?:(?:(?!sets|playlist|stats|settings|logout|notifications|you|messages)(?:[a-z0-9\-_]{1,100}))(?:\/s\-[a-zA-Z0-9\-_]{1,10})?))(?:[a-z0-9\-\?=\/]*)$");
-
-        /* Elave etdiyim config fayl default adda(App.Config) olmayanda hec cure qebul eletdire bilmedim proqrama. */
-        // Application-in konfiqurasiya faylini elde edirik:
-       private static Configuration config =   ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
-
-        // AppSettings section-ni elde edirik:
-        private static AppSettingsSection appSettings = config.AppSettings;
-        // ***************************************************************************************************************** \\
 
         private async void btnFind_Click(object sender, EventArgs e)
         {
             if (regex.IsMatch(txtMusicUrl.Text))
             {
-                string result = await Helper.BuildArtworkUrl(txtMusicUrl.Text);
+                string result = await ImageHelper.BuildArtworkUrl(txtMusicUrl.Text);
                 if (result != null) { pbArtwork.ImageLocation = result; }
                 else { pbArtwork.Image = Properties.Resources._2; }
             }
@@ -69,7 +85,7 @@ namespace SCartDownloader_FormUI
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (regex.IsMatch(txtMusicUrl.Text)) { Helper.DownloadImage(txtMusicUrl.Text); }
+            if (regex.IsMatch(txtMusicUrl.Text)) { ImageHelper.DownloadImage(txtMusicUrl.Text); }
             else
             {
                 txtMusicUrl.Clear();
@@ -80,18 +96,18 @@ namespace SCartDownloader_FormUI
 
         private void FormMain_FormClosed(object sender, FormClosedEventArgs e)
         {
-            /* Faylin strukturu '<configuration>'-dan, taki, 'key'(adi dogru yazilmalidir kodda gosterdiyimiz adi ile) ve 'value'-suna(default deyer verilmelidir uygun tip esasinda) qeder dogru yazilmasa NullReferenceException alacayiq.  */
-
-            appSettings.Settings[("cb_GenerateRandomFileName")].Value = cbRandomName.Checked.ToString();
-            appSettings.Settings[("cb_SaveToLastSelectedFolder")].Value = cbLastFolder.Checked.ToString();
-            config.Save(ConfigurationSaveMode.Modified);
-            ConfigurationManager.RefreshSection("appSettings");
+            ConfigurationFileContent["Settings"]["GenerateRandomFileName"] = cbRandomName.Checked.ToString();
+            ConfigurationFileContent["Settings"]["SaveToLastSelectedFolder"] = cbLastFolder.Checked.ToString();
+            ConfigurationManager.WriteFile(ConfigurationFilePath, ConfigurationFileContent);
         }
 
         private void FormMain_Load(object sender, EventArgs e)
-       {
-            cbRandomName.Checked = Convert.ToBoolean(appSettings?.Settings["cb_GenerateRandomFileName"]?.Value);
-            cbLastFolder.Checked = Convert.ToBoolean(appSettings?.Settings["cb_SaveToLastSelectedFolder"]?.Value);
+        {
+            if(File.Exists(ConfigurationFilePath))
+            {
+                cbRandomName.Checked = Convert.ToBoolean(ConfigurationFileContent["Settings"]["GenerateRandomFileName"]);
+                cbLastFolder.Checked = Convert.ToBoolean(ConfigurationFileContent["Settings"]["SaveToLastSelectedFolder"]);
+            }
         }
     }
 }

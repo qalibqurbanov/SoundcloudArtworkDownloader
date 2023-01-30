@@ -29,13 +29,14 @@ namespace SCartDownloader_FormUI
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
             this.txtMusicUrl = new MetroFramework.Controls.MetroTextBox();
             this.btnSave = new MetroFramework.Controls.MetroButton();
             this.pbArtwork = new System.Windows.Forms.PictureBox();
             this.btnFind = new MetroFramework.Controls.MetroButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.cbOlculer = new MetroFramework.Controls.MetroComboBox();
-            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
+            this.lblVersion = new MetroFramework.Controls.MetroLabel();
             this.cbRandomName = new MetroFramework.Controls.MetroCheckBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
@@ -67,6 +68,7 @@ namespace SCartDownloader_FormUI
             this.txtMusicUrl.MaxLength = 32767;
             this.txtMusicUrl.Name = "txtMusicUrl";
             this.txtMusicUrl.PasswordChar = '\0';
+            this.txtMusicUrl.PromptText = "Please enter music url. Example: https://soundcloud.com/AUTHOR/SONG";
             this.txtMusicUrl.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtMusicUrl.SelectedText = "";
             this.txtMusicUrl.SelectionLength = 0;
@@ -135,20 +137,20 @@ namespace SCartDownloader_FormUI
             this.cbOlculer.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.cbOlculer.UseSelectable = true;
             // 
-            // metroLabel1
+            // lblVersion
             // 
-            this.metroLabel1.AutoSize = true;
-            this.metroLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.metroLabel1.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.metroLabel1.Location = new System.Drawing.Point(360, 18);
-            this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(42, 19);
-            this.metroLabel1.Style = MetroFramework.MetroColorStyle.Magenta;
-            this.metroLabel1.TabIndex = 6;
-            this.metroLabel1.Text = "v1.0.0";
-            this.metroLabel1.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.metroLabel1.UseCustomBackColor = true;
-            this.metroLabel1.UseCustomForeColor = true;
+            this.lblVersion.AutoSize = true;
+            this.lblVersion.BackColor = System.Drawing.Color.Transparent;
+            this.lblVersion.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.lblVersion.Location = new System.Drawing.Point(360, 18);
+            this.lblVersion.Name = "lblVersion";
+            this.lblVersion.Size = new System.Drawing.Size(50, 19);
+            this.lblVersion.Style = MetroFramework.MetroColorStyle.Magenta;
+            this.lblVersion.TabIndex = 6;
+            this.lblVersion.Text = "version";
+            this.lblVersion.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.lblVersion.UseCustomBackColor = true;
+            this.lblVersion.UseCustomForeColor = true;
             // 
             // cbRandomName
             // 
@@ -254,13 +256,14 @@ namespace SCartDownloader_FormUI
             this.Controls.Add(this.metroLabel2);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.cbRandomName);
-            this.Controls.Add(this.metroLabel1);
+            this.Controls.Add(this.lblVersion);
             this.Controls.Add(this.cbOlculer);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnFind);
             this.Controls.Add(this.pbArtwork);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.txtMusicUrl);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "FormMain";
             this.Resizable = false;
@@ -283,7 +286,7 @@ namespace SCartDownloader_FormUI
         private MetroFramework.Controls.MetroButton btnFind;
         private System.Windows.Forms.Panel panel1;
         public MetroFramework.Controls.MetroComboBox cbOlculer;
-        private MetroFramework.Controls.MetroLabel metroLabel1;
+        private MetroFramework.Controls.MetroLabel lblVersion;
         private System.Windows.Forms.Panel panel2;
         private MetroFramework.Controls.MetroLabel metroLabel2;
         private System.Windows.Forms.Panel panel3;

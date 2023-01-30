@@ -2,7 +2,7 @@
 
 
 <p align="center">Download music artwork from Soundcloud.</p>
-<br/> <img alt="AppScreenshot" src="https://i.ibb.co/ZNS76pp/Sound-Cloud-Artwork-Downloader.png" width="100%"/> 
+<br/> <img alt="AppScreenshot" src="https://i.ibb.co/fSyQrk9/Soundcloud-Artwork-Downloader.jpg" width="100%"/> 
 
 
 # Project requirements:

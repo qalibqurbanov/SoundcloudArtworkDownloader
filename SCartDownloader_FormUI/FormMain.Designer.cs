@@ -68,7 +68,7 @@ namespace SCartDownloader_FormUI
             this.txtMusicUrl.MaxLength = 32767;
             this.txtMusicUrl.Name = "txtMusicUrl";
             this.txtMusicUrl.PasswordChar = '\0';
-            this.txtMusicUrl.PromptText = "Please enter music url. Example: https://soundcloud.com/AUTHOR/SONG";
+            this.txtMusicUrl.WaterMark = "Please enter music url. Example: https://soundcloud.com/AUTHOR/SONG";
             this.txtMusicUrl.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtMusicUrl.SelectedText = "";
             this.txtMusicUrl.SelectionLength = 0;
@@ -271,7 +271,6 @@ namespace SCartDownloader_FormUI
             this.Text = "SoundCloud Artwork Downloader";
             this.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormMain_FormClosed);
-            this.Load += new System.EventHandler(this.FormMain_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbArtwork)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

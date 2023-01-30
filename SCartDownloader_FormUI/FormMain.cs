@@ -33,10 +33,19 @@ namespace SCartDownloader_FormUI
         {
             InitializeComponent();
 
-            #region Create configuration file if not exists
-            if (!File.Exists(ConfigurationFilePath)) { File.Create(ConfigurationFilePath); }
-            else { ConfigurationFileContent = ConfigurationManager.ReadFile(ConfigurationFilePath); }
-            #endregion Create configuration file if not exists
+            #region Read or create configuration file
+            if (!File.Exists(ConfigurationFilePath))
+            {
+                File.Create(ConfigurationFilePath);
+            }
+            else
+            {
+                ConfigurationFileContent = ConfigurationManager.ReadFile(ConfigurationFilePath);
+
+                cbRandomName.Checked = Convert.ToBoolean(ConfigurationFileContent["Settings"]["GenerateRandomFileName"]);
+                cbLastFolder.Checked = Convert.ToBoolean(ConfigurationFileContent["Settings"]["SaveToLastSelectedFolder"]);
+            }
+            #endregion Read or create configuration file
 
             #region Settings of Form Controls
             lblVersion.Text = $"v{Application.ProductVersion}";
@@ -99,15 +108,6 @@ namespace SCartDownloader_FormUI
             ConfigurationFileContent["Settings"]["GenerateRandomFileName"] = cbRandomName.Checked.ToString();
             ConfigurationFileContent["Settings"]["SaveToLastSelectedFolder"] = cbLastFolder.Checked.ToString();
             ConfigurationManager.WriteFile(ConfigurationFilePath, ConfigurationFileContent);
-        }
-
-        private void FormMain_Load(object sender, EventArgs e)
-        {
-            if(File.Exists(ConfigurationFilePath))
-            {
-                cbRandomName.Checked = Convert.ToBoolean(ConfigurationFileContent["Settings"]["GenerateRandomFileName"]);
-                cbLastFolder.Checked = Convert.ToBoolean(ConfigurationFileContent["Settings"]["SaveToLastSelectedFolder"]);
-            }
         }
     }
 }

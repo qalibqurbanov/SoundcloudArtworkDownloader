@@ -1,4 +1,4 @@
-# <p align="center">SoundCloudArtworkDownloader</p>
+# <p align="center">Soundcloud Artwork Downloader</p>
 
 
 <p align="center">Download music artwork from Soundcloud.</p>

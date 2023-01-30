@@ -15,6 +15,7 @@
 | :-------- | :------- |
 | `MetroModernUI` | [https://www.nuget.org/packages/MetroModernUI](https://www.nuget.org/packages/MetroModernUI) |
 | `HtmlAgilityPack` | [https://www.nuget.org/packages/HtmlAgilityPack](https://www.nuget.org/packages/HtmlAgilityPack) |
+| `ini-parser` | [https://www.nuget.org/packages/ini-parser](https://www.nuget.org/packages/ini-parser) |
 
 
 **Icons:**

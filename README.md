@@ -1,16 +1,16 @@
-# <p align="center">Soundcloud Artwork Downloader</p>
+# <p align="center">:magnet: Soundcloud Artwork Downloader</p>
+**<p align="center">Download music artwork from Soundcloud.</p>**
+<p align="center">
+  <img alt="AppScreenshot" src="https://i.ibb.co/fSyQrk9/Soundcloud-Artwork-Downloader.jpg" width="90%"/> 
+</p>
 
 
-<p align="center">Download music artwork from Soundcloud.</p>
-<br/> <img alt="AppScreenshot" src="https://i.ibb.co/fSyQrk9/Soundcloud-Artwork-Downloader.jpg" width="100%"/> 
-
-
-# Project requirements:
+# :hammer_and_wrench: Project requirements:
 - [Net Framework v4.5.2](https://dotnet.microsoft.com/en-us/download/dotnet-framework/net452)
 
 
-# Used libraries, icons:
-**Libraries:**
+# :gear: Used libraries, icons:
+**:books: Libraries:**
 | Name | URL     |
 | :-------- | :------- |
 | `MetroModernUI` | [https://www.nuget.org/packages/MetroModernUI](https://www.nuget.org/packages/MetroModernUI) |
@@ -18,7 +18,7 @@
 | `ini-parser` | [https://www.nuget.org/packages/ini-parser](https://www.nuget.org/packages/ini-parser) |
 
 
-**Icons:**
+**:art: Icons:**
 | Name | URL     |
 | :-------- | :------- |
 | `Icons` | [https://icons8.com](https://icons8.com) |
